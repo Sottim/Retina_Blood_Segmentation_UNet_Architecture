@@ -1,6 +1,7 @@
 import os
 import time
 from glob import glob
+from sklearn.model_selection import train_test_split
 
 import torch
 from torch.utils.data import DataLoader
@@ -56,8 +57,8 @@ if __name__ == "__main__":
     train_x = sorted(glob("../new_data/train/image/*"))
     train_y = sorted(glob("../new_data/train/mask/*"))
 
-    valid_x = sorted(glob("../new_data/test/image/*"))
-    valid_y = sorted(glob("../new_data/test/mask/*"))
+    # Split the dataset into training and validation sets where 15% of 80 = 12 images are used for validation
+    train_x, valid_x, train_y, valid_y = train_test_split(train_x, train_y, test_size=0.15, random_state=42)
 
     data_str = f"Dataset Size(Augumented):\nTrain: {len(train_x)} - Valid: {len(valid_x)}\n"
     print(data_str)
@@ -66,7 +67,7 @@ if __name__ == "__main__":
     H = 512
     W = 512
     size = (H, W)
-    batch_size = 1
+    batch_size = 2
     num_epochs = 50
     lr = 1e-4
     checkpoint_path = "files/checkpoint.pth"
