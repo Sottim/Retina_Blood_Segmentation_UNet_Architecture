@@ -6,8 +6,8 @@ This repository contains my work for Image(Semantic) Segmentation for Retina Blo
 ## Dataset 
 The Digital Retinal Images for Vessel Extraction (DRIVE) dataset is a dataset for retinal vessel segmentation. It consists of a total of JPEG 40 color fundus images; including 7 abnormal pathology cases. 
 The set of 40 images was equally divided into 20 images for the training set and 20 images for the testing set.
-![Image](./new_data/test/image/01_test_0.png)
-![Image Mask](./new_data/test/mask/01_test_0.png)
+![Image ](./new_data/test/image/01_test_0.png | width = 300)
+![Image Mask](./new_data/test/mask/01_test_0.png | width = 300)
 
 ## Coding Approach
 ### 1. Data Augumentation
@@ -33,7 +33,7 @@ The model is tested and we jaccard metrics score is used to highlight the model'
 #### Future
 Due to the computational limitation, the training was not fully complete. However, upon testing the model shows the promising results within few epochs. In future, I aim to make the model more robust by incroperating the Res-Net Architecture with UNet.
 
-More to go...
+Still more to go...
 
 
 
